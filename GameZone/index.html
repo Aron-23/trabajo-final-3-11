@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone | Gaming Community & Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" data-target="home">
+                <i class="fa-solid fa-gamepad neon-icon"></i>
+                <span>GAME<span class="highlight">ZONE</span></span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active" data-target="home"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="#" class="nav-link" data-target="explore"><i class="fa-solid fa-compass"></i> Explorar</a>
+                <a href="#" class="nav-link" data-target="news"><i class="fa-solid fa-newspaper"></i> Noticias</a>
+                <a href="#" class="nav-link" data-target="profile"><i class="fa-solid fa-user-astronaut"></i> Perfil</a>
+                <a href="#" class="nav-link" data-target="favorites"><i class="fa-solid fa-heart"></i> Favoritos <span id="fav-badge" class="badge">0</span></a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+
+        <!-- 1. HOME SECTION -->
+        <section id="home-section" class="content-section active">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <span class="hero-tag">NEXT GEN GAMING HUB</span>
+                    <h1>DESCUBRE, JUEGA Y CONECTA CON LA COMUNIDAD</h1>
+                    <p>Explora los mejores videojuegos del momento, mantente al día con las últimas noticias y guarda tus títulos favoritos en un solo lugar.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" data-action="go-explore"><i class="fa-solid fa-rocket"></i> Explorar Juegos</button>
+                        <button class="btn btn-secondary" data-action="go-news"><i class="fa-solid fa-newspaper"></i> Ver Noticias</button>
+                    </div>
+                </div>
+                <div class="hero-glow"></div>
+            </div>
+
+            <div class="section-container">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-fire neon-icon"></i> Juegos Populares</h2>
+                    <a href="#" class="view-more" data-target="explore">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="games-grid" id="popular-games-grid">
+                    <!-- Dynamic popular games -->
+                </div>
+            </div>
+
+            <div class="section-container">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-sparkles neon-icon"></i> Últimos Lanzamientos</h2>
+                </div>
+                <div class="games-grid" id="latest-games-grid">
+                    <!-- Dynamic latest games -->
+                </div>
+            </div>
+
+            <div class="section-container">
+                <div class="section-header">
+                    <h2><i class="fa-solid fa-bullhorn neon-icon"></i> Noticias Destacadas</h2>
+                    <a href="#" class="view-more" data-target="news">Ver todas <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="news-preview-grid" id="home-news-grid">
+                    <!-- Dynamic news preview -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. EXPLORE SECTION -->
+        <section id="explore-section" class="content-section">
+            <div class="section-container">
+                <div class="explore-header">
+                    <h2>Explorar Videojuegos</h2>
+                    <p>Filtra y encuentra tu próxima gran aventura gamer</p>
+                </div>
+
+                <div class="filters-toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="game-search-input" placeholder="Buscar por título o descripción...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="genre-filter">
+                            <option value="all">Todos los géneros</option>
+                            <!-- Dynamic genres -->
+                        </select>
+                        <select id="sort-filter">
+                            <option value="rating-desc">Mayor Puntuación</option>
+                            <option value="name-asc">Nombre (A-Z)</option>
+                            <option value="name-desc">Nombre (Z-A)</option>
+                            <option value="date-desc">Más Recientes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="games-grid" id="catalog-games-grid">
+                    <!-- Dynamic catalog -->
+                </div>
+                <div id="no-results" class="no-results hidden">
+                    <i class="fa-solid fa-ghost"></i>
+                    <h3>No se encontraron videojuegos</h3>
+                    <p>Prueba con otros términos de búsqueda o filtros.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. NEWS SECTION -->
+        <section id="news-section" class="content-section">
+            <div class="section-container">
+                <div class="explore-header">
+                    <h2>Noticias Gaming</h2>
+                    <p>Últimas novedades, análisis y actualizaciones de la industria</p>
+                </div>
+                <div class="news-grid" id="full-news-grid">
+                    <!-- Dynamic news list -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PROFILE SECTION -->
+        <section id="profile-section" class="content-section">
+            <div class="section-container">
+                <div class="explore-header">
+                    <h2>Perfil Gamer</h2>
+                    <p>Gestiona tu identidad y estadísticas en GameZone</p>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-banner-bg"></div>
+                    <div class="profile-header-content">
+                        <div class="avatar-container">
+                            <img id="profile-avatar-img" src="" alt="Avatar">
+                            <button class="edit-avatar-btn" id="edit-avatar-btn" title="Cambiar Avatar"><i class="fa-solid fa-camera"></i></button>
+                        </div>
+                        <div class="profile-user-info">
+                            <h3 id="profile-username">Guest Gamer</h3>
+                            <p id="profile-bio">Pasionate gamer exploring new worlds.</p>
+                        </div>
+                        <button class="btn btn-primary" id="edit-profile-btn"><i class="fa-solid fa-pen-to-square"></i> Editar Perfil</button>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-played">124</span>
+                                <span class="stat-label">Juegos Registrados</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fa-solid fa-clock"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-hours">1,500h</span>
+                                <span class="stat-label">Horas Online</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fa-solid fa-trophy"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-trophies">42</span>
+                                <span class="stat-label">Logros Desbloqueados</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fa-solid fa-heart"></i>
+                            <div class="stat-info">
+                                <span class="stat-value" id="stat-favs-count">0</span>
+                                <span class="stat-label">Favoritos Guardados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container" style="padding: 2rem 0 0 0;">
+                    <h3><i class="fa-solid fa-heart neon-icon"></i> Mis Juegos Favoritos en el Perfil</h3>
+                    <div class="games-grid" id="profile-favs-grid">
+                        <!-- Dynamic favorite games in profile -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FAVORITES SECTION -->
+        <section id="favorites-section" class="content-section">
+            <div class="section-container">
+                <div class="explore-header">
+                    <h2>Mis Favoritos</h2>
+                    <p>Tu colección personal de videojuegos guardados</p>
+                </div>
+                <div class="games-grid" id="favorites-games-grid">
+                    <!-- Dynamic favorites -->
+                </div>
+                <div id="no-favorites" class="no-results hidden">
+                    <i class="fa-solid fa-heart-crack"></i>
+                    <h3>No tienes juegos favoritos guardados</h3>
+                    <p>Explora el catálogo y haz clic en el icono de corazón para agregar tus juegos preferidos.</p>
+                    <button class="btn btn-primary" data-target="explore" style="margin-top: 1.5rem;"><i class="fa-solid fa-compass"></i> Explorar Catálogo</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Game Details Modal -->
+    <div class="modal-overlay" id="game-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-card profile-edit-card">
+            <button class="modal-close" id="profile-modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <h3>Editar Perfil Gamer</h3>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="input-username">Nombre de usuario</label>
+                    <input type="text" id="input-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-avatar">URL del Avatar / Seed</label>
+                    <input type="text" id="input-avatar" required>
+                </div>
+                <div class="form-group">
+                    <label for="input-bio">Descripción personal / Bio</label>
+                    <textarea id="input-bio" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-gamepad neon-icon"></i>
+                    <span>GAME<span class="highlight">ZONE</span></span>
+                </a>
+                <p>La comunidad definitiva para gamers. Descubre, comparte y vive tu pasión al máximo.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <a href="#" data-target="home">Inicio</a>
+                <a href="#" data-target="explore">Explorar</a>
+                <a href="#" data-target="news">Noticias</a>
+                <a href="#" data-target="profile">Perfil</a>
+                <a href="#" data-target="favorites">Favoritos</a>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitch"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GameZone Community. Desarrollado con HTML5, CSS3 y Vanilla JS.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Entry Point -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
